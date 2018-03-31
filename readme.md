@@ -1,0 +1,1 @@
+Sample project used for the internal Xamarin training
