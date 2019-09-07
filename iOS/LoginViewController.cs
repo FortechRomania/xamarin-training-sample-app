@@ -1,4 +1,3 @@
-using Foundation;
 using GalaSoft.MvvmLight.Helpers;
 using System;
 using System.Collections.Generic;

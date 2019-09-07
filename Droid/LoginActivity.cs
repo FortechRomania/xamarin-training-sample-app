@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 using Android.App;
 using Android.Arch.Lifecycle;
 using Android.OS;

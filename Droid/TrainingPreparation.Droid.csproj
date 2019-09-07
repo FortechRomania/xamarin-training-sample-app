@@ -52,7 +52,7 @@
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MoviesActivity.cs" />
     <Compile Include="ViewModelProviderExtensions.cs" />
-    <Compile Include="ObservableRecyclerViewAdapter.cs" />
+    <Compile Include="ObservingRecyclerViewAdapter.cs" />
     <Compile Include="MovieCellViewHolder.cs" />
     <Compile Include="LoginActivity.ui.cs">
       <DependentUpon>LoginActivity.cs</DependentUpon>
