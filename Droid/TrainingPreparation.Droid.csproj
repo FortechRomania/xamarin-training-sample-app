@@ -73,9 +73,9 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\layout\Login.axml" />
-    <AndroidResource Include="Resources\layout\Movies.axml" />
-    <AndroidResource Include="Resources\layout\MovieCell.axml" />
+    <AndroidResource Include="Resources\layout\Login.xml" />
+    <AndroidResource Include="Resources\layout\Movies.xml" />
+    <AndroidResource Include="Resources\layout\MovieCell.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
