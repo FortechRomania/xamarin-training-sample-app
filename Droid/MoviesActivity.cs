@@ -21,7 +21,7 @@ namespace TrainingPreparation.Droid
             _viewModel = ViewModelProviders.Of(this).Get(() => new MoviesViewModel(new MovieSearchService()));
 
             MoviesRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
-            MoviesRecyclerView.SetAdapter(new ObservableRecyclerViewAdapter<MovieViewModel, MovieCellViewHolder>
+            MoviesRecyclerView.SetAdapter(new ObservingRecyclerViewAdapter<MovieViewModel, MovieCellViewHolder>
             {
                 Items = _viewModel.Movies,
                 BindViewHolderDelegate = BindMovieCellViewHolder,

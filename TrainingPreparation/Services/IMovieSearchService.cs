@@ -21,8 +21,8 @@ namespace TrainingPreparation.Services
                 var uriBuilder = new UriBuilder("http://www.omdbapi.com");
                 uriBuilder.Query = await new FormUrlEncodedContent(new Dictionary<string, string>
                 {
-                    {"s", searchTerm},
-                    {"apikey", "d8dedd29"},
+                    ["s"] = searchTerm,
+                    ["apikey"] = "d8dedd29",
                 }).ReadAsStringAsync();
 
                 var response = await httpClient.GetStringAsync(uriBuilder.Uri);

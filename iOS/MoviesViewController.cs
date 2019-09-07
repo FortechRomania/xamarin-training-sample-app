@@ -22,7 +22,7 @@ namespace TrainingPreparation.iOS
             var cellIdentifer = nameof(MovieTableViewCell);
             MoviesTableView.RegisterNibForCellReuse(UINib.FromName(nameof(MovieTableViewCell), null), cellIdentifer);
 
-            MoviesTableView.Source = new ObservableTableViewSource<MovieViewModel, MovieTableViewCell>
+            MoviesTableView.Source = new ObservingTableViewSource<MovieViewModel, MovieTableViewCell>
             {
                 Items = _viewModel.Movies,
                 BindCellDelegate = BindMovieCell,

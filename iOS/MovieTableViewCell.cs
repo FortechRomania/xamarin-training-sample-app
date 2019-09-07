@@ -1,6 +1,4 @@
 ﻿using System;
-
-using Foundation;
 using TrainingPreparation.ViewModels;
 using UIKit;
 

@@ -119,7 +119,7 @@
     <Compile Include="MovieTableViewCell.designer.cs">
       <DependentUpon>MovieTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ObservableTableViewSource.cs" />
+    <Compile Include="ObservingTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TrainingPreparation\TrainingPreparation.csproj">

@@ -6,7 +6,7 @@ using UIKit;
 
 namespace TrainingPreparation.iOS
 {
-    public class ObservableTableViewSource<TItem, TCell> : UITableViewSource where TCell : UITableViewCell
+    public class ObservingTableViewSource<TItem, TCell> : UITableViewSource where TCell : UITableViewCell
     {
         private UITableView _tableView;
         private ObservableCollection<TItem> _items;

@@ -6,7 +6,7 @@ using Android.Views;
 
 namespace TrainingPreparation.Droid
 {
-    public class ObservableRecyclerViewAdapter<TItem, THolder> : RecyclerView.Adapter where THolder : RecyclerView.ViewHolder
+    public class ObservingRecyclerViewAdapter<TItem, THolder> : RecyclerView.Adapter where THolder : RecyclerView.ViewHolder
     {
         private ObservableCollection<TItem> _items;
 
