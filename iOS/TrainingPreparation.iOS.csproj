@@ -9,6 +9,7 @@
     <RootNamespace>TrainingPreparation.iOS</RootNamespace>
     <AssemblyName>TrainingPreparation.iOS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -119,7 +120,7 @@
     <Compile Include="MovieTableViewCell.designer.cs">
       <DependentUpon>MovieTableViewCell.cs</DependentUpon>
     </Compile>
-    <Compile Include="ObservingTableViewSource.cs" />
+    <Compile Include="ObservingPlainTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TrainingPreparation\TrainingPreparation.csproj">
@@ -131,6 +132,7 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.2</Version>
     </PackageReference>
+    <PackageReference Include="ThomasLevesque.WeakEvent" Version="4.0.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

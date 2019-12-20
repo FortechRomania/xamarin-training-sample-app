@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using TrainingPreparation.Services;
 using TrainingPreparation.ViewModels;
@@ -6,7 +5,7 @@ using UIKit;
 
 namespace TrainingPreparation.iOS
 {
-    public partial class MoviesViewController : UIViewController
+    public partial class MoviesViewController : UIViewController, ObservingPlainTableViewSource<MovieViewModel>.IDelegate
     {
         private MoviesViewModel _viewModel;
 
@@ -22,19 +21,19 @@ namespace TrainingPreparation.iOS
             var cellIdentifer = nameof(MovieTableViewCell);
             MoviesTableView.RegisterNibForCellReuse(UINib.FromName(nameof(MovieTableViewCell), null), cellIdentifer);
 
-            MoviesTableView.Source = new ObservingTableViewSource<MovieViewModel, MovieTableViewCell>
+            MoviesTableView.Source = new ObservingPlainTableViewSource<MovieViewModel>
             {
-                Items = _viewModel.Movies,
-                BindCellDelegate = BindMovieCell,
-                CellIdentifier = cellIdentifer
+                DataSource = _viewModel.Movies,
+                WeakDelegate = this,
+                CellReuseIdentifier = cellIdentifer
             };
 
             _viewModel.ViewDidLoad();
         }
 
-        private void BindMovieCell(MovieViewModel movieViewModel, MovieTableViewCell cell, NSIndexPath indexPath)
+        public void BindCell(UITableViewCell cell, MovieViewModel element)
         {
-            cell.Bind(movieViewModel);
+            (cell as MovieTableViewCell).Bind(element);
         }
     }
 }
