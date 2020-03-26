@@ -93,6 +93,10 @@
       <Project>{BE7BCDFF-E995-444D-AF3C-D52EE1214A23}</Project>
       <Name>TrainingPreparation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TrainingPreparation.Library.Droid\TrainingPreparation.Library.Droid.csproj">
+      <Project>{8AC4D610-E1C7-49C7-891B-1F9B3E1BF14F}</Project>
+      <Name>TrainingPreparation.Library.Droid</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

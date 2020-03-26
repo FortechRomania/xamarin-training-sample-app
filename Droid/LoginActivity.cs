@@ -3,7 +3,9 @@ using Android.App;
 using Android.Arch.Lifecycle;
 using Android.OS;
 using Android.Support.V4.App;
+using Android.Widget;
 using GalaSoft.MvvmLight.Helpers;
+using TrainingPreparation.Library.Droid;
 using TrainingPreparation.Services;
 using TrainingPreparation.ViewModels;
 
@@ -28,7 +30,15 @@ namespace TrainingPreparation.Droid
             _viewModel = ViewModelProviders.Of(this).Get(() => new LoginViewModel(new LoginService()));
             _viewModel.NavigationService = this;
 
+            var libraryButton = FindViewById<Button>(Resource.Id.library_button);
+            libraryButton.Click += LibraryButton_Click;
+
             SetBindings();
+        }
+
+        private void LibraryButton_Click(object sender, System.EventArgs e)
+        {
+            StartActivity(typeof(LibraryActivity));
         }
 
         protected override void OnDestroy()
