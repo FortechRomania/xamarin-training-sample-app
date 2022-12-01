@@ -1,23 +1,24 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace TrainingPreparation.Data;
 
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Type { Movie, Series };
 
 public class Movie
 {
-    [JsonProperty("Title")]
+    [JsonPropertyName("Title")]
     public string Title { get; set; }
 
-    [JsonProperty("Year")]
+    [JsonPropertyName("Year")]
     public string Year { get; set; }
 
-    [JsonProperty("imdbID")]
+    [JsonPropertyName("imdbID")]
     public string ImdbId { get; set; }
 
-    [JsonProperty("Type")]
+    [JsonPropertyName("Type")]
     public Type Type { get; set; }
 
-    [JsonProperty("Poster")]
+    [JsonPropertyName("Poster")]
     public string Poster { get; set; }
 }

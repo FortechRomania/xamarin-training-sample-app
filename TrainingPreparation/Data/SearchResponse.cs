@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace TrainingPreparation.Data;
 
 public class SearchResponse
 {
-    [JsonProperty("Search")]
+    [JsonPropertyName("Search")]
     public List<Movie> Search { get; set; }
 
-    [JsonProperty("totalResults")]
+    [JsonPropertyName("totalResults")]
     public string TotalResults { get; set; }
 
-    [JsonProperty("Response")]
+    [JsonPropertyName("Response")]
     public string Response { get; set; }
 }
