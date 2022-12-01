@@ -44,6 +44,7 @@ public partial class LoginViewController : UIViewController, LoginViewModel.INav
         _bindings.Add(this.SetBinding(() => _viewModel.Password, () => PasswordTextField.Text, BindingMode.TwoWay));
 
         _bindings.Add(this.SetBinding(() => _viewModel.LoginButtonTitle).WhenSourceChanges(() => LoginButton.SetTitle(_viewModel.LoginButtonTitle, UIControlState.Normal)));
+
         LoginButton.SetCommand(_viewModel.LoginCommand);
 
         _bindings.Add(this.SetBinding(() => _viewModel.ErrorMessage, () => ErrorLabel.Text));

@@ -51,6 +51,7 @@ public partial class LoginActivity : FragmentActivity, LoginViewModel.INavigatio
         _bindings.Add(this.SetBinding(() => _viewModel.Password, () => PasswordEditText.Text, BindingMode.TwoWay));
 
         _bindings.Add(this.SetBinding(() => _viewModel.LoginButtonTitle, () => LoginButton.Text));
+
         LoginButton.SetCommand(_viewModel.LoginCommand);
 
         _bindings.Add(this.SetBinding(() => _viewModel.ErrorMessage, () => ErrorTextView.Text));

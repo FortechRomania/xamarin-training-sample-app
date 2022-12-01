@@ -12,7 +12,7 @@ public class LoginService : ILoginService
 {
     public async Task LoginAsync(string emailAddress, string password)
     {
-        await Task.Delay(TimeSpan.FromSeconds(1));
+        await Task.Delay(TimeSpan.FromSeconds(5));
 
         if (emailAddress != "test@test.ro" || password != "password")
         {
