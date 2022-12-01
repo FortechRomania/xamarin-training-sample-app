@@ -1,8 +1,8 @@
 ﻿using Android.App;
-using Android.Arch.Lifecycle;
 using Android.OS;
-using Android.Support.V4.App;
-using Android.Support.V7.Widget;
+using AndroidX.Fragment.App;
+using AndroidX.Lifecycle;
+using AndroidX.RecyclerView.Widget;
 using TrainingPreparation.Services;
 using TrainingPreparation.ViewModels;
 
@@ -18,7 +18,7 @@ namespace TrainingPreparation.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Movies);
 
-            _viewModel = ViewModelProviders.Of(this).Get(() => new MoviesViewModel(new MovieSearchService()));
+            _viewModel = new ViewModelProvider(this).Get(() => new MoviesViewModel(new MovieSearchService()));
 
             MoviesRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
             MoviesRecyclerView.SetAdapter(new ObservingRecyclerViewAdapter<MovieViewModel, MovieCellViewHolder>

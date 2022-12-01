@@ -1,20 +1,19 @@
 ﻿using System;
+using ObjCRuntime;
 using TrainingPreparation.ViewModels;
-using UIKit;
 
-namespace TrainingPreparation.iOS
+namespace TrainingPreparation.iOS;
+
+public partial class MovieTableViewCell : UITableViewCell
 {
-    public partial class MovieTableViewCell : UITableViewCell
+    protected MovieTableViewCell(NativeHandle handle) : base(handle)
     {
-        protected MovieTableViewCell(IntPtr handle) : base(handle)
-        {
-            // Note: this .ctor should not contain any initialization logic.
-        }
+        // Note: this .ctor should not contain any initialization logic.
+    }
 
-        public void Bind(MovieViewModel viewModel)
-        {
-            MovieTitleLabel.Text = viewModel.Title;
-            ImdbIdLabel.Text = viewModel.ImdbId;
-        }
+    public void Bind(MovieViewModel viewModel)
+    {
+        MovieTitleLabel.Text = viewModel.Title;
+        ImdbIdLabel.Text = viewModel.ImdbId;
     }
 }

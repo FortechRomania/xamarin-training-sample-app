@@ -1,11 +1,10 @@
-﻿using Android.Support.V7.Widget;
+﻿using AndroidX.RecyclerView.Widget;
 
-namespace TrainingPreparation.Droid
+namespace TrainingPreparation.Droid;
+
+public partial class MoviesActivity
 {
-    public partial class MoviesActivity
-    {
-        private RecyclerView _moviesRecyclerView;
+    private RecyclerView _moviesRecyclerView;
 
-        public RecyclerView MoviesRecyclerView => _moviesRecyclerView ?? (_moviesRecyclerView = FindViewById<RecyclerView>(Resource.Id.moviesRecyclerView));
-    }
+    public RecyclerView MoviesRecyclerView => _moviesRecyclerView ?? (_moviesRecyclerView = FindViewById<RecyclerView>(Resource.Id.moviesRecyclerView));
 }
