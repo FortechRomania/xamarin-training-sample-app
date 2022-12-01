@@ -14,7 +14,9 @@ namespace TrainingPreparation.Droid;
 public partial class LoginActivity : FragmentActivity, LoginViewModel.INavigationService
 {
     private LoginViewModel _viewModel;
+
     private List<Binding> _bindings = new List<Binding>();
+    private List<EventToCommandInfo> _commands = new List<EventToCommandInfo>();
 
     public void NavigateToMoviesScreen()
     {
@@ -24,6 +26,7 @@ public partial class LoginActivity : FragmentActivity, LoginViewModel.INavigatio
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
+
         SetContentView(Resource.Layout.Login);
 
         _viewModel = new ViewModelProvider(this).Get(() => new LoginViewModel(new LoginService()));
@@ -40,6 +43,9 @@ public partial class LoginActivity : FragmentActivity, LoginViewModel.INavigatio
 
         _bindings.ForEach(binding => binding.Detach());
         _bindings.Clear();
+
+        _commands.ForEach(eventToCommandInfo => eventToCommandInfo.Detach());
+        _commands.Clear();
     }
 
     private void SetBindings()
@@ -52,7 +58,7 @@ public partial class LoginActivity : FragmentActivity, LoginViewModel.INavigatio
 
         _bindings.Add(this.SetBinding(() => _viewModel.LoginButtonTitle, () => LoginButton.Text));
 
-        LoginButton.SetCommand(_viewModel.LoginCommand);
+        _commands.Add(LoginButton.SetDetachableCommand(_viewModel.LoginCommand));
 
         _bindings.Add(this.SetBinding(() => _viewModel.ErrorMessage, () => ErrorTextView.Text));
     }
